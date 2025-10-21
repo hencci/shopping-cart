@@ -1,40 +1,48 @@
-import React from "react";
 import { NavLink } from "react-router-dom";
-import { useCart } from "../../context/CartContext";
 import styles from "./Navbar.module.css";
 
-function Navbar() {
-  const { cartCount } = useCart(); // Access total item count from context
-
+function Navbar({ cartItemCount }) {
   return (
     <nav className={styles.navbar}>
-      {/* Application Logo */}
-      <h1 className={styles.logo}>ReactShop</h1>
+      <h2 className={styles.logo}>ShopRite</h2>
 
-      {/* Navigation Links */}
-      <div className={styles.navLinks}>
-        <NavLink
-          to="/"
-          className={({ isActive }) => (isActive ? styles.active : "")}
-        >
-          Home
-        </NavLink>
-        <NavLink
-          to="/shop"
-          className={({ isActive }) => (isActive ? styles.active : "")}
-        >
-          Shop
-        </NavLink>
-        <NavLink
-          to="/cart"
-          className={({ isActive }) => (isActive ? styles.active : "")}
-        >
-          Cart{" "}
-          {cartCount > 0 && (
-            <span className={styles.cartBadge}>{cartCount}</span>
-          )}
-        </NavLink>
-      </div>
+      <ul className={styles.navLinks}>
+        <li>
+          <NavLink
+            to="/"
+            className={({ isActive }) =>
+              isActive ? styles.activeLink : styles.link
+            }
+          >
+            Home
+          </NavLink>
+        </li>
+
+        <li>
+          <NavLink
+            to="/shop"
+            className={({ isActive }) =>
+              isActive ? styles.activeLink : styles.link
+            }
+          >
+            Shop
+          </NavLink>
+        </li>
+
+        <li>
+          <NavLink
+            to="/cart"
+            className={({ isActive }) =>
+              isActive ? styles.activeLink : styles.link
+            }
+          >
+            Cart{" "}
+            {cartItemCount > 0 && (
+              <span className={styles.badge}>{cartItemCount}</span>
+            )}
+          </NavLink>
+        </li>
+      </ul>
     </nav>
   );
 }

@@ -1,14 +1,16 @@
-import React from "react";
 import styles from "./Home.module.css";
 
 function Home() {
   return (
-    <div className={styles.page}>
-      <h2>Welcome to ReactShop!</h2>
-      <p>
-        Explore our collection of products and add your favorites to the cart.
-      </p>
-    </div>
+    <section className={styles.home}>
+      <h1>Welcome to ShopRite!</h1>
+      <p>Your one-stop shop for everything.</p>
+      <img
+        src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f"
+        alt="Shopping"
+        className={styles.image}
+      />
+    </section>
   );
 }
 

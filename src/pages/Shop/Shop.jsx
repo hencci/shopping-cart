@@ -1,12 +1,11 @@
-import React from "react";
 import styles from "./Shop.module.css";
 
 function Shop() {
   return (
-    <div className={styles.page}>
-      <h2>Shop Page</h2>
-      <p>Products will be fetched and displayed here.</p>
-    </div>
+    <section className={styles.shop}>
+      <h1>Shop Our Products</h1>
+      <p>Browse through our amazing catalog.</p>
+    </section>
   );
 }
 
