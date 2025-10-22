@@ -1,5 +1,18 @@
 .shop {
   color: white;
   text-align: center;
-  padding: 3rem 1rem;
+  padding: 2rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.loading {
+  color: #ccc;
+  text-align: center;
+  margin-top: 3rem;
 }
