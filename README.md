@@ -172,6 +172,12 @@ This project is open-source and available under the MIT License.
 
 ---
 
+## Live preview
+
+https://hencci-shopping-cart.netlify.app
+
+---
+
 ## 👨‍💻 Author
 
 Henry Moses
