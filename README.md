@@ -183,4 +183,4 @@ https://hencci-shopping-cart.netlify.app
 Henry Moses
 
 - [GitHub](https://github.com/hencci)
-- [LinkedIn](https://linkedin.com/henry-orlu-moses-78bb74286)
+- [LinkedIn](https://linkedin.com/in/henry-orlu-moses-78bb74286)
