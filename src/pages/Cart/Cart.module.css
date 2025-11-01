@@ -1,0 +1,89 @@
+.cart {
+  color: white;
+  padding: 2rem;
+  text-align: center;
+}
+
+.cartContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.cartItem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background-color: #1e1e2f;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  justify-content: space-between;
+}
+
+.image {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.details {
+  flex: 1;
+  text-align: left;
+}
+
+.details h3 {
+  font-size: 1rem;
+  margin-bottom: 0.3rem;
+}
+
+.details p {
+  color: #4caf50;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.controls button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 0.3rem 0.7rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.controls span {
+  font-weight: bold;
+}
+
+.removeButton {
+  background-color: #d32f2f;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 0.4rem 0.8rem;
+  cursor: pointer;
+  margin-top: 0.8rem;
+  font-size: 0.9rem;
+  transition: background-color 0.2s ease;
+}
+
+.removeButton:hover {
+  background-color: #b71c1c;
+}
+
+.total {
+  margin-top: 2rem;
+  font-size: 1.4rem;
+  color: #4caf50;
+}

@@ -1,16 +1,186 @@
-# React + Vite
+# 🛍️ Shopping Cart
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, modular React e-commerce web application that allows users to browse products, add items to their cart, and view their selections in a smooth, responsive interface.
+The app uses FakeStore API for dynamic product data and demonstrates practical React concepts such as component-based design, routing, and state management.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## React Compiler
+### 🏠 Home Page
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Welcoming landing page with a brief introduction.
+- Simple, minimal layout following modern design principles.
 
-## Expanding the ESLint configuration
+### 🛒 Shop Page
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Fetches and displays products dynamically from FakeStore API.
+- Each product includes an image, title, price, and an “Add to Cart” button.
+- Responsive product grid layout using CSS modules.
+
+### 🧺 Cart Page
+
+- Displays all items added to the cart.
+- Shows total price and item count dynamically.
+- Allows easy navigation back to the shop for more shopping.
+
+### 🧭 Navigation
+
+- Fixed navbar with routes to Home, Shop, and Cart.
+- Active link highlighting for better user experience.
+- Logo and brand name (“ShopRite”) remain visible throughout navigation.
+
+### 💡 State Management
+
+- Uses React Hooks (useState, useEffect) for product fetching and cart logic.
+- Props are passed down from the parent (App.jsx) to manage cart interactions cleanly.
+
+### 🎨 Styling
+
+- Clean, responsive, and dark-themed design.
+- Styled using CSS Modules for scoped, maintainable styling.
+- Works seamlessly on desktop and mobile.
+
+---
+
+## 🧩 Folder Structure
+
+```css
+src/
+├── components/
+│   ├── Navbar/
+│   │   ├── Navbar.jsx
+│   │   └── Navbar.module.css
+│   ├── ProductCard/
+│       ├── ProductCard.jsx
+│       └── ProductCard.module.css
+│
+├── pages/
+│   ├── Home/
+│   │   ├── Home.jsx
+│   │   └── Home.module.css
+│   ├── Shop/
+│   │   ├── Shop.jsx
+│   │   └── Shop.module.css
+│   └── Cart/
+│       ├── Cart.jsx
+│       └── Cart.module.css
+│
+├── App.jsx
+├── App.module.css
+├── main.jsx
+└── index.css
+```
+
+---
+
+## ⚙️ Technologies Used
+
+| Category   | Technology                                         |
+| ---------- | -------------------------------------------------- |
+| Framework  | [React 18+](https://reactjs.org/)                  |
+| Routing    | [React Router DOM](https://reactrouter.com/)       |
+| Styling    | CSS Modules                                        |
+| API        | [FakeStore API](https://fakestoreapi.com/products) |
+| Build Tool | [Vite](https://vitejs.dev/)                        |
+| Language   | JavaScript (ES6+)                                  |
+
+---
+
+## 🧠 Key Concepts Illustrated
+
+- Component-based architecture — reusable UI components for scalability.
+- State management — local state handling using useState hook.
+- Data fetching — asynchronous fetch with error handling via try/catch.
+- Routing — single-page navigation with react-router-dom.
+- Side effects — use of useEffect to fetch data on component mount.
+- Props drilling — passing onAddToCart and cart data cleanly between components.
+
+---
+
+## ⚡ Installation & Setup
+
+1. Clone the Repository
+
+```bash
+git clone https://github.com/hencci/shopping-cart.git
+cd shopping-cart
+```
+
+2. Install Dependencies
+
+```bash
+npm install
+```
+
+3. Run the Development Server
+
+```bash
+npm run dev
+```
+
+4. Open local host
+
+---
+
+## 🌐 API Information
+
+Base URL:
+
+```bash
+https://fakestoreapi.com/products
+```
+
+Each product includes:
+
+```json
+{
+  "id": 1,
+  "title": "Fjallraven - Foldsack No. 1 Backpack",
+  "price": 109.95,
+  "description": "Your perfect pack for everyday use...",
+  "category": "men's clothing",
+  "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
+}
+```
+
+### 💻 Example Code Snippet — Product Fetching
+
+```jsx
+useEffect(() => {
+  const fetchProducts = async () => {
+    try {
+      const response = await fetch("https://fakestoreapi.com/products");
+      const data = await response.json();
+      setProducts(data);
+    } catch (error) {
+      console.error("Error fetching products:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  fetchProducts();
+}, []);
+```
+
+---
+
+## 🧾 License
+
+This project is open-source and available under the MIT License.
+
+---
+
+## Live preview
+
+https://hencci-shopping-cart.netlify.app
+
+---
+
+## 👨‍💻 Author
+
+Henry Moses
+
+- [GitHub](https://github.com/hencci)
+- [LinkedIn](https://linkedin.com/in/henry-orlu-moses-78bb74286)
